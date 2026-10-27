@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OpenStream — free movies and timeless stories.">
+  <title>OpenStream — Free Movies</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="OpenStream home"><span class="brand-mark">▶</span><span>OpenStream</span></a>
+    <nav aria-label="Main navigation">
+      <a class="active" href="#home">Home</a>
+      <a href="#classics">Classic Movies</a>
+      <a href="#documentaries">Documentaries</a>
+      <a href="#about">About</a>
+    </nav>
+    <label class="search">
+      <span aria-hidden="true">⌕</span>
+      <input id="searchInput" type="search" placeholder="Search titles or genres…" autocomplete="off">
+    </label>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">A FREE FILM LIBRARY</p>
+        <h1 id="heroTitle">Great stories.<br><span>Free to discover.</span></h1>
+        <p class="hero-description">Explore classic cinema, independent films, and documentaries hosted by public archives.</p>
+        <div class="hero-actions">
+          <button class="button primary" id="exploreBtn">⌄ &nbsp; Explore movies</button>
+          <a class="button secondary" href="#about">How it works</a>
+        </div>
+        <p class="hero-note">No subscription. No account required.</p>
+      </div>
+      <div class="hero-stamp"><span>OPEN</span><strong>FILM</strong><span>COLLECTION</span></div>
+    </section>
+
+    <section class="catalog-section" id="classics">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COLLECTION</p><h2>Classic Movies</h2></div>
+        <span class="section-hint" id="resultCount">Browse the collection →</span>
+      </div>
+      <div class="movie-grid" id="movieGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>No titles match your search. Try another title or genre.</p>
+    </section>
+
+    <section class="feature-strip" id="documentaries">
+      <div class="feature-icon">✳</div>
+      <div><p class="eyebrow">WATCH WITH CURIOSITY</p><h2>Stories from another time.</h2><p>Discover films and archival footage made available by libraries, filmmakers, and public collections.</p></div>
+      <a href="https://archive.org/details/movies" target="_blank" rel="noopener noreferrer" class="text-link">Explore the archive ↗</a>
+    </section>
+
+    <section class="about-section" id="about">
+      <p class="eyebrow">ABOUT OPENSTREAM</p>
+      <h2>A simple home for films worth finding.</h2>
+      <p>OpenStream is a catalog and viewing interface. Videos are played from their hosting providers, so this website does not store the movie files itself.</p>
+      <p class="legal-note">Always verify the copyright status and license of each film in your country. A film being available online does not automatically mean it is public domain.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#"><span class="brand-mark">▶</span><span>OpenStream</span></a>
+    <span>Free movies. Timeless stories.</span>
+    <span class="footer-right">Independent project · Video playback provided by external hosts</span>
+  </footer>
+
+  <dialog id="playerDialog" class="player-dialog">
+    <div class="dialog-top"><div><p class="eyebrow">NOW PLAYING</p><h2 id="playerTitle">Movie title</h2></div><button id="closePlayer" class="close-button" aria-label="Close player">✕</button></div>
+    <div class="player-frame" id="playerFrame"></div>
+    <p class="player-description" id="playerDescription"></p>
+    <p class="player-warning">If playback fails, the host may not have an embeddable stream for this item. Open the source page to check available formats.</p>
+    <a id="sourceLink" class="text-link" href="#" target="_blank" rel="noopener noreferrer">Open source page ↗</a>
+  </dialog>
+  <script src="catalog.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
